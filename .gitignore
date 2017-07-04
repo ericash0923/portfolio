@@ -17,4 +17,4 @@
 .byebug_history
 
 # hide secrets files
-/config/secret.yml
+/config/secrets.yml
