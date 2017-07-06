@@ -2,5 +2,23 @@ class CredentialsController < ApplicationController
  def index
   @portfolio_items = Credential.all
  end
+ 
+ def new
+  @portfolio_item = Credential.new
+ end
+ 
+ def create
+  @portfolio_item = Credential.new(params.require(:credential).permit(:title, :subtitle,
+  :body))
+
+    respond_to do |format|
+      if @portfolio_item.save
+        format.html { redirect_to credentials_path, 
+        notice: 'Your portfolio item is now live.' }
+      else
+        format.html { render :new }
+      end
+    end
+ end
 
 end
