@@ -37,5 +37,9 @@ class CredentialsController < ApplicationController
       end
     end
    end
+   
+   def show
+    @portfolio_item = Credential.find(params[:id])
+   end
 
 end
