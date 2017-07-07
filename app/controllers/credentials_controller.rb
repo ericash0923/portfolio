@@ -41,5 +41,14 @@ class CredentialsController < ApplicationController
    def show
     @portfolio_item = Credential.find(params[:id])
    end
+   
+   def destroy
+    @portfolio_item = Credential.find(params[:id])
+    @portfolio_item.destroy
+     respond_to do |format|
+       format.html { redirect_to credentials_url, 
+       notice: 'Protfolio was successfully destroyed.' }
+     end
+   end
 
 end
