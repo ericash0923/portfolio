@@ -7,6 +7,10 @@ class CredentialsController < ApplicationController
   @portfolio_item = Credential.new
  end
  
+ def edit
+  @portfolio_item = Credential.find(params[:id])
+ end
+ 
  def create
   @portfolio_item = Credential.new(params.require(:credential).permit(:title, :subtitle,
   :body))
@@ -20,5 +24,18 @@ class CredentialsController < ApplicationController
       end
     end
  end
+ 
+   def update
+    @portfolio_item = Credential.find(params[:id])
+    respond_to do |format|
+      if @portfolio_item.update(params.require(:credential).permit(:title, :subtitle,
+  :body))
+        format.html { redirect_to credentials_path, 
+        notice: 'Protfolio item was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+   end
 
 end
