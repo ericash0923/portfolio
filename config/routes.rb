@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :credentials, except: [:show]
+  get 'angular-items', to:'credentials#angular'
   get 'portfolio/:id', to:'credentials#show', as:'portfolio_show'
   
   

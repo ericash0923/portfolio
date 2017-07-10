@@ -3,6 +3,10 @@ class CredentialsController < ApplicationController
   @portfolio_items = Credential.all
  end
  
+ def angular
+  @augular_portfolio_item = Credential.angular
+ end
+ 
  def new
   @portfolio_item = Credential.new
  end
