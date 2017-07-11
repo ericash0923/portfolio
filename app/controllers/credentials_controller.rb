@@ -9,6 +9,7 @@ class CredentialsController < ApplicationController
  
  def new
   @portfolio_item = Credential.new
+  3.times { @portfolio_item.technologies.build }
  end
  
  def edit
@@ -17,7 +18,7 @@ class CredentialsController < ApplicationController
  
  def create
   @portfolio_item = Credential.new(params.require(:credential).permit(:title, :subtitle,
-  :body))
+  :body, technologies_attributes: [:name] ))
 
     respond_to do |format|
       if @portfolio_item.save
