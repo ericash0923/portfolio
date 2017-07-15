@@ -17,9 +17,7 @@ class CredentialsController < ApplicationController
  end
  
  def create
-  @portfolio_item = Credential.new(params.require(:credential).permit(:title, :subtitle,
-  :body, technologies_attributes: [:name] ))
-
+  @portfolio_item = Credential.new(portfolio_parms)
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to credentials_path, 
@@ -33,8 +31,7 @@ class CredentialsController < ApplicationController
    def update
     @portfolio_item = Credential.find(params[:id])
     respond_to do |format|
-      if @portfolio_item.update(params.require(:credential).permit(:title, :subtitle,
-  :body))
+      if @portfolio_item.update(portfolio_parms)
         format.html { redirect_to credentials_path, 
         notice: 'Protfolio item was successfully updated.' }
       else
@@ -54,6 +51,16 @@ class CredentialsController < ApplicationController
        format.html { redirect_to credentials_url, 
        notice: 'Protfolio was successfully destroyed.' }
      end
+   end
+   
+   private
+   
+   def portfolio_parms 
+    params.require(:credential).permit(:title, 
+                                       :subtitle, 
+                                       :body,
+                                       technologies_attributes: [:name]
+                                       )
    end
 
 end
