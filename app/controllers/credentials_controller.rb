@@ -1,4 +1,6 @@
 class CredentialsController < ApplicationController
+layout 'credential'
+
  def index
   @portfolio_items = Credential.all
  end
