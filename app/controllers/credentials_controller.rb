@@ -16,6 +16,7 @@ layout 'credential'
  
  def edit
   @portfolio_item = Credential.find(params[:id])
+  3.times { @portfolio_item.technologies.build }
  end
  
  def create
