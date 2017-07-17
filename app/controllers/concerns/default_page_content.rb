@@ -7,5 +7,5 @@ module DefaultPageContent
 
    def set_page_defaults
     @page_title = "Portfolio"
-  end
+   end
 end
