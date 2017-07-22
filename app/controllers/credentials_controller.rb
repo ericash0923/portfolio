@@ -1,5 +1,6 @@
 class CredentialsController < ApplicationController
-layout 'credential'
+ before_action :set_portfolio_item, only:[:edit, :update, :show, :destroy]
+ layout 'credential'
 
  def index
   @portfolio_items = Credential.all
@@ -15,12 +16,10 @@ layout 'credential'
  end
  
  def edit
-  @portfolio_item = Credential.find(params[:id])
   3.times { @portfolio_item.technologies.build }
  end
  
  def create
-  @portfolio_item = Credential.new(portfolio_parms)
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to credentials_path, 
@@ -32,7 +31,6 @@ layout 'credential'
  end
  
    def update
-    @portfolio_item = Credential.find(params[:id])
     respond_to do |format|
       if @portfolio_item.update(portfolio_parms)
         format.html { redirect_to credentials_path, 
@@ -44,11 +42,9 @@ layout 'credential'
    end
    
    def show
-    @portfolio_item = Credential.find(params[:id])
    end
    
    def destroy
-    @portfolio_item = Credential.find(params[:id])
     @portfolio_item.destroy
      respond_to do |format|
        format.html { redirect_to credentials_url, 
@@ -65,5 +61,8 @@ layout 'credential'
                                        technologies_attributes: [:name]
                                        )
    end
-
+   
+   def portfolio_item
+    @portfolio_item = Credential.new(portfolio_parms)
+   end
 end
