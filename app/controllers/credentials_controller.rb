@@ -1,5 +1,5 @@
 class CredentialsController < ApplicationController
- before_action :set_portfolio_item, only:[:edit, :update, :show, :destroy]
+ before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
  layout 'credential'
 
  def index
@@ -20,6 +20,7 @@ class CredentialsController < ApplicationController
  end
  
  def create
+  @portfolio_item = Credential.new(portfolio_parms)
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to credentials_path, 
@@ -62,7 +63,7 @@ class CredentialsController < ApplicationController
                                        )
    end
    
-   def portfolio_item
-    @portfolio_item = Credential.new(portfolio_parms)
+   def set_portfolio_item
+    @portfolio_item = Credential.find(params[:id])
    end
 end
