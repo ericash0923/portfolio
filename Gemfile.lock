@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ericash0923/dev_viewtool
+  revision: 4f2ed26bb5e7160d6bb5d8610daa629a2167a307
+  specs:
+    ash_viewtool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ash_viewtool!
   bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)

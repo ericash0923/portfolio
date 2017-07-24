@@ -15,4 +15,8 @@ module ApplicationHelper
     content_tag(:p, greeting, class: "source-greeting" )
   end
  end
+  
+  def copyright_generator
+    AshViewtool::Renderer.copyright 'Eric Ash', 'All rights reserved'
+  end
 end
