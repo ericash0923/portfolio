@@ -58,3 +58,5 @@ gem 'devise', '~> 4.3'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'ash_viewtool', git: 'https://github.com/ericash0923/dev_viewtool'
+
+gem 'petergate', '~> 1.7', '>= 1.7.5'
