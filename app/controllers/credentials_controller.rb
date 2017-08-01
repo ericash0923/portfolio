@@ -7,6 +7,13 @@ class CredentialsController < ApplicationController
   @portfolio_items = Credential.by_position
  end
  
+ def sort
+  params[:order].each do |key, value|
+   Credential.find(value[:id]).update(position: value[:position])
+  end
+   render nothing: true
+ end
+ 
  def angular
   @augular_portfolio_item = Credential.angular
  end
