@@ -17,23 +17,20 @@
     
     <%= render 'shared/blog_masthead' %>
     
-    <!--start of container and row element-->
     <div class="container">
 
       <div class="row">
-    <!--start of conataincer and row element-->
-        
+    
         <%= yield %>
         
         <%= render 'shared/blog_sidebar' %>
         
-          </div>
-          <!--end of row-->
-        
+      </div>
+    
         <%= render 'shared/blog_footer' %>
+        
         <%= source_helper("blog") %>
     
     </div>
-    <!--end of conatainer-->
   </body>
 </html>
