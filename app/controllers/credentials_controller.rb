@@ -20,11 +20,9 @@ class CredentialsController < ApplicationController
  
  def new
   @portfolio_item = Credential.new
-  3.times { @portfolio_item.technologies.build }
  end
  
  def edit
-  3.times { @portfolio_item.technologies.build }
  end
  
  def create
@@ -69,7 +67,7 @@ class CredentialsController < ApplicationController
                                        :body,
                                        :main_image,
                                        :thumb_image,
-                                       technologies_attributes: [:name]
+                                       technologies_attributes: [:id, :name, :_destroy]
                                        )
    end
    
