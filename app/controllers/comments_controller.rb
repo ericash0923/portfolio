@@ -7,6 +7,6 @@ class CommentsController < ApplicationController
  private 
  
  def comment_parmas
-  parmas.private(:comment).permint(:content)
+  parmas.require(:comment).permit(:content)
  end
 end
