@@ -18,15 +18,7 @@ class Blog < ApplicationRecord
   end
   
   def self.recent
-    all.order(created_at: :desc)
-  end
-  
-  def self.status
-    if user.has_roles?(:site_admin)
-      all.order(created_at: :desc)
-    else
-      all.published(created_at: :desc)
-    end
+    order(created_at: :desc)
   end
   
 end
