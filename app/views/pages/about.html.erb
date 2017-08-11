@@ -1,16 +1,94 @@
-<h1 class="cover-heading">About Me.</h1>
-
-<hr>
-
-<div class="row">
-  <div class="col-md-5">
-   <%= image_tag "about.jpg", width: 300, alt: "about image" %>
+<div class="app-card-container">
+ <div class="card">
+  <h1 class="cover-heading">About Me</h1>
+  
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-5">
+     <%= image_tag "about.jpg", width: 300, alt: "about image", class: 'profile-img' %>
+    
+    <div class="skills">
+      <% @skills.each do |skill| %>
+      <div class="skills">
+       <h4><%= skill.title %></h4>
+        <div class="progress">
+          <div 
+           class="progress-bar progress-bar-striped bg-warning"
+           role="progressbar"
+           aria-valuenow="<%= skill.percent_utilized %>"
+           aria-valuemax="100"
+           style="width: <%= skill.percent_utilized %>%"
+          ></div>
+        </div>
+      </div>
+       <% end %>
+    </div>
+   
+   </div>
+    
+   <div class="col-md-7">
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum finibus nisi,
+     eu mollis metus. Donec iaculis ipsum vel erat vestibulum suscipit. Proin aliquam mauris quis 
+     placerat pharetra. Proin tortor sapien, tristique eget fermentum id, venenatis sed nisl. Donec ut dolor tempor, lacinia magna et, 
+     euismod est. Ut at placerat nulla. Fusce sed urna sit amet dolor auctor molestie. 
+     Proin et fermentum nisl.
+     </p>
+     
+     <p>
+      <button
+       class="btn btn-primary"
+       type="button"
+       data-toggle="collapse"
+       data-target="#jobHistory"
+       aria-expanded="false"
+       aria-controller="jobHistory"
+       >
+        Job History
+      </button>
+      
+      <button
+       class="btn btn-primary"
+       type="button"
+       data-toggle="collapse"
+       data-target="#education"
+       aria-expanded="false"
+       aria-controller="education"
+       >
+        Education
+      </button>
+     </p>
+     
+     <p>
+      <div class="collapse" id="jobHistory">
+        <div class="card card-block">
+         My Job 1
+        </div>
+        <div class="card card-block">
+         My Job 2
+        </div>
+        <div class="card card-block">
+         My Job 3
+        </div>
+      </div>
+     </p>
+     
+     <p>
+      <div class="collapse" id="education">
+        <div class="card card-block">
+         School 1
+        </div>
+        <div class="card card-block">
+         School 2
+        </div>
+        <div class="card card-block">
+         School 3
+        </div>
+      </div>
+     </p>
+   </div>
   </div>
-  <div class="col-md-7">
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum finibus nisi,
-   eu mollis metus. Donec iaculis ipsum vel erat vestibulum suscipit. Proin aliquam mauris quis placerat pharetra. 
-   Proin tortor sapien, tristique eget fermentum id, venenatis sed nisl. Donec ut dolor tempor, lacinia magna et, 
-   euismod est. Ut at placerat nulla. Fusce sed urna sit amet dolor auctor molestie. Proin et fermentum nisl.</p> 
-  </div>
+ </div>
 </div>
+
    
