@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_sidebar_topics
-  layout 'blog'
+  layout 'topic'
 
   def index
     @topics = Topic.all

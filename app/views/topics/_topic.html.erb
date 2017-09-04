@@ -1,3 +1,11 @@
-<div>
- <%= link_to topic.title, topic_path(topic) %>
-</div>
+  <div class="col-md-4 col-sm-3 placeholder">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-block">
+        <h4 class="card-title"><%= link_to topic.title, topic_path(topic) %></h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
