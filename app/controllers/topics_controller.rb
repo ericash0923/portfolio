@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_sidebar_topics
-  before_action :set_topic_item, only: [:edit, :show, :update]
+  before_action :set_topic_item, only: [:edit, :show, :update, :destroy]
   layout 'topic'
 
   def index
@@ -49,7 +49,6 @@ class TopicsController < ApplicationController
   end
   
   def destroy
-    @topic = Topic.find(params[:id])
     @topic.destroy
      respond_to do |format|
        format.html { redirect_to topics_url, 
