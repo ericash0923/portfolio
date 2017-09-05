@@ -1,5 +1,6 @@
   <div class="col-md-4 col-sm-3 placeholder">
     <div class="card" style="width: 20rem;">
+      <%= image_tag topic.image unless topic.image.nil? %>
       <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-block">
         <h4 class="card-title"><%= link_to topic.title, topic_path(topic) %></h4>
