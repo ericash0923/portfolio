@@ -40,6 +40,10 @@ module ApplicationHelper
       title: 'Blog'
      },
      {
+      url: topics_path,
+      title: 'Library'
+     },
+     {
       url: credentials_path,
       title: 'Portfolio'
      },
