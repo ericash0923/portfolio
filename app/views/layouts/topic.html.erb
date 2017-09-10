@@ -19,11 +19,13 @@
     <div class="container-fluid">
       <div class="row">
         
-        <%=render 'shared/topic_sidebar' %>
+        <%= render 'shared/topic_sidebar' %>
         
         <%= yield %>
       
       </div>
+      
+      <%= alerts %>
     </div>
         
   </body>

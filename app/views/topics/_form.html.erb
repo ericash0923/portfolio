@@ -1,6 +1,6 @@
 <%= form_for(topic) do |f| %>
   <% if topic.errors.any? %>
-    <% blog.errors.full_messages.each do |error| %>
+    <% topic.errors.full_messages.each do |error| %>
       <%= alert_generator error %>
     <% end %>
   <% end %>
