@@ -1,10 +1,7 @@
-<div class="col-md-3 col-sm-3 placeholders">
-  <div class="card" style="width: 15rem;">
-    <%#= image_tag topic.image, class: "card-img-top", width: '100%' unless topic.image.nil?  %>
-      <div class="card-block">
-      <%= category.title %>
-      <p><%#=# link_to 'Edit', edit_topic_path(topic) %> |
-         <%#=# link_to 'Delete', topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>
+<div class="col-md-6">
+  <div class="card w-75">
+    <div class="card-block">
+      <h3 class="card-title"><%= link_to category.title, category_path(category) %></h3>
+    </div>
   </div>
 </div>

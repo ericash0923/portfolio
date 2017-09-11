@@ -1,11 +1,14 @@
 <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-
-  <h1><%= @topic.title %></h1>
     
-  <%= paginate @blogs %>
+  <h1><%= @topic.title %></h1>
   
-  <%= render @blogs %>
+  <section class= "row">
+    
+    <%#= paginate @blogs %>
+    
+    <%= render @categories %>
+    
+    <%#= paginate @blogs %>
   
-  <%= paginate @blogs %>
-
+  </section>
 </main>
