@@ -12,8 +12,7 @@
   </nav>
   
   <p>
-    <%=# markdown @blog.body %>
-    <%= @blog.body %>
+    <%= markdown @blog.body %>
   </p>
   
   <%= render 'comments/comment_form' %>
